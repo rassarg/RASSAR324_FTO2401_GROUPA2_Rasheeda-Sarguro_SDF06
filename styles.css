@@ -2,7 +2,7 @@
 
 :root {
     font-size: 12px;
-    height: 100%; /* unsure if this has any effect*/
+    height: 90%; /* unsure if this has any effect*/
 }
 body {
     font-family: "Open Sans", Arial, sans-serif;
@@ -77,12 +77,11 @@ img {
     background:linear-gradient(45deg, #5851db, #833ab4, #e1306c, #fd1d1d, #ff3434); /* I tried and tried but couldnt quite figure out how to make the circle appear around
     the profile pic, as if a story had been posted, so I just made the background color the Instagram logo colors instead */ 
 }
-
+/* FIX LAYOUT OF MARGIN HEADER*/
 .profile-user-name {
     display: inline-block;
     font-size: 30px;
     font-weight: 300;
-    justify-content: flex-end;
 }
 
 .btn-profile-edit-btn {
@@ -115,33 +114,25 @@ img {
 .profile-real-name, .profile-stat-count {
     font-weight: 600;
 }
-/* Gallery*
+/* Gallery*/
+
 .container .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 10px;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, minmax(80px, 250px));
+    gap: 20px;
     align-items: center;
     margin-inline: auto;
-}
+    justify-content: center;
+}   
 .gallery-item img {
-    display: block;
-    width: 200px;
-    height: 280px;
-    object-fit: contain;
-}
-/* Loading sign*/
-
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 5px 5px;
-    padding-bottom: 3rem;
+    width: 100%;
+    height: 100%;
+    object-fit: relative;
 }
 
 .gallery-item {
-    position: relative;
+    
     flex: 1 0 15%;
     color: #fff;
     margin: 5px;
@@ -191,20 +182,16 @@ img {
 .fa-fa-heart, .fa-fa-comment {
     transform: rotateY(180deg);
 }
+/* loader */
 
-.gallery-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 .loader {
-    width: 3rem;
-    height: 3rem;
+    width: 40px;
+    height: 40px;
     border: 4px solid #b9b9b9;
     border-bottom-color: transparent;
     border-radius: 50%;
-    margin: auto;
-    padding-bottom: 10px;
+    margin-top: 10%;
+    margin-left: 45%;
     animation: loader 500ms linear infinite;
 }
 @keyframes loader {
