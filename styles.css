@@ -1,12 +1,9 @@
 /* Base Styles */
 
 :root {
-    font-size: 10px;
+    font-size: 11px;
 }
-
-*,
-*::before,
-*::after {
+*::before {
     box-sizing: border-box;
 }
 
@@ -15,7 +12,7 @@ body {
     min-height: 100vh;
     background-color: #fafafa;
     color: #262626;
-    padding-bottom: 3rem;
+    
 }
 
 img {
@@ -24,3 +21,46 @@ img {
  
 /* below is all added*/ 
 
+.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.profile-bio {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-top: 100px;
+    align-self: flex-start;
+    font-size: larger;   
+}
+.profile-stat-count {
+    align-self: flex-end;
+    padding: 2px;
+}
+
+.profile-real-name {
+    align-self: flex-start;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 50px;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px; 
+} 
+.gallery {
+    padding: 0px;
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);   
+}
+.gallery-item img {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    object-fit: contain;
+}
