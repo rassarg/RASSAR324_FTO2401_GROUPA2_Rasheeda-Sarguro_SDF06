@@ -1,11 +1,9 @@
 /* Base Styles */
 
 :root {
-    font-size: 11px;
+    font-size: 12px;
     height: 100%; /* unsure if this has any effect*/
 }
-
-
 body {
     font-family: "Open Sans", Arial, sans-serif;
     min-height: 100vh;
@@ -19,10 +17,12 @@ body {
 }
 img {
     display: block;
-    max-width: 100%;
+    
 }
-/* below is all added*/ 
+/* below is all custom*/ 
 
+/* Profile */
+//*
 .profile {
     max-width: 500px;
     display: flex;
@@ -35,15 +35,16 @@ img {
 .profile-user-settings {
     align-self: center;
     margin-left: 80%;
-}
-.profile-stats {
-    align-self: center;
+    font-family: sans-serif;
+    
 }
 .profile-bio {
     align-self: center;
     padding: 20px;
     font-size: larger;
 }
+
+
 /*ul {
     display: block;
     list-style-type: disc;
@@ -53,6 +54,65 @@ img {
     margin-inline-end: 0px;
     padding-inline-start: 0px; 
 } */
+
+.profile {
+    padding: 100px;
+    
+}
+
+.profile-image {
+    float: left;
+    width: calc(33.333% - 1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    border: 5px solid transparent;
+    background:linear-gradient(45deg, #5851db, #833ab4, #e1306c, #fd1d1d, #ff3434); /* I tried and tried but couldnt quite figure out how to make the circle appear around
+    the profile pic, as if a story had been posted, so I just made the background color the Instagram logo colors instead */ 
+}
+
+.profile-user-name {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.btn-profile-edit-btn {
+    font-size: 12px;
+    border: 10px transparent;
+    border-radius: 0.3rem;
+    padding: 10px;
+    margin-left: 5%;
+}
+.btn-profile-settings-btn {
+    font-size: 12px;
+    border: 10px transparent;
+    border-radius: 0.3rem;
+    padding: 10px;
+}
+.profile-stats {
+    margin-top: 2.3rem;
+    margin-bottom: 40px;
+}
+.profile-stats li {
+    display: inline-block;
+    font-size: 12px;
+    justify-content: center;
+    margin-right: 50px;
+}
+.profile-bio {
+    font-size: 15px;
+    font-weight: 400;
+}
+.profile-real-name, .profile-stat-count {
+    font-weight: 600;
+}
+/* Gallery*/
 .container .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -67,16 +127,16 @@ img {
     height: 280px;
     object-fit: contain;
 }
-
-
+/* Loading sign*/
 
 .loader {
-    width: 5rem;
-    height: 5rem;
-    border: 0.6rem solid #b9b9b9;
+    width: 3rem;
+    height: 3rem;
+    border: 4px solid #b9b9b9;
     border-bottom-color: transparent;
     border-radius: 50%;
-    margin: 0 auto;
+    margin: auto;
+    padding-bottom: 10px;
     animation: loader 500ms linear infinite;
 }
 @keyframes loader {
