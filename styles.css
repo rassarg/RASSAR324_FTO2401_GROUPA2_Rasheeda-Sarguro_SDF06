@@ -2,48 +2,49 @@
 
 :root {
     font-size: 11px;
+    height: 100%; /* unsure if this has any effect*/
 }
-*::before {
-    box-sizing: border-box;
-}
+
 
 body {
     font-family: "Open Sans", Arial, sans-serif;
     min-height: 100vh;
     background-color: #fafafa;
     color: #262626;
-    
 }
-
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 img {
     display: block;
+    max-width: 100%;
 }
- 
 /* below is all added*/ 
 
 .profile {
+    max-width: 500px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+}
+.profile-image {
+    float: left;
+}
+.profile-user-settings {
+    align-self: center;
+    margin-left: 80%;
+}
+.profile-stats {
+    align-self: center;
 }
 .profile-bio {
-    margin-top: 20px;
-    margin-left: 20px;
-    padding-top: 100px;
-    align-self: flex-start;
-    font-size: larger;   
+    align-self: center;
+    padding: 20px;
+    font-size: larger;
 }
-.profile-stat-count {
-    align-self: flex-end;
-    padding: 2px;
-}
-
-.profile-real-name {
-    align-self: flex-start;
-}
-
-ul {
+/*ul {
     display: block;
     list-style-type: disc;
     margin-block-start: 50px;
@@ -51,16 +52,35 @@ ul {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 0px; 
-} 
-.gallery {
-    padding: 0px;
-    display: flex;
+} */
+.container .gallery {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);   
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    align-items: center;
+    margin-inline: auto;
 }
 .gallery-item img {
-    position: relative;
-    width: 280px;
+    display: block;
+    width: 200px;
     height: 280px;
     object-fit: contain;
+}
+
+
+
+.loader {
+    width: 5rem;
+    height: 5rem;
+    border: 0.6rem solid #b9b9b9;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: loader 500ms linear infinite;
+}
+@keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
 }

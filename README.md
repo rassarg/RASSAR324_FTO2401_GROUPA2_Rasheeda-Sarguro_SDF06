@@ -16,8 +16,8 @@ Flexbox. The flexbox zombie game really drove home my understanding and applicat
 - **Styling Elements**: 
 
 #### Challenges Faced
-number values. Anytime I had to target relative lengths I struggled to find the right proportions.
-Additionally, targeting the child of a specific class took me some time to figure out as I hadn't quite grasped how to target a child when a class name is repeated in the html.
+-Numerical values. Anytime I had to target relative sizes I struggled to find the right proportions.
+-The imgaes provided had different proportion sizes but all had the same class name. Targeting them individually wasn't possible if keeping the html code intact from what was provided, so finding an alternative way to proportion them was challenging
 
 - **Responsive Design for Smaller Screens**:
 - **Hover and Focus Effects**: 
@@ -29,3 +29,4 @@ Additionally, targeting the child of a specific class took me some time to figur
 - **Creative Design Choices**:
 
 #### Overall Learning Experience
+I definitely enjoyed using flexbox more than grid because it relied less on numerical values.
