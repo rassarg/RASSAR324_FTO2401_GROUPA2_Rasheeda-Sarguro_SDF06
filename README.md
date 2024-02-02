@@ -12,15 +12,18 @@ The hardest part of this was learning proportions and ratios and how they all re
 #### Areas of Mastery
 
 - **CSS Layout Techniques**: 
-Flexbox. The flexbox zombie game really drove home my understanding and application of flexbox, and now I enjoy it.
+I believe I have a better understanding of how to target classes in CSS, as well as the parent-child relationships. This took some time for me to fully grasp but now I think I have the hang of it
 - **Responsive Design**: 
-I believe that I need to work on this area more. I have sort of implemented it on my page, but I can tell that it hasn't worked as well as I would like it to  
+I believe that I need to work on this area. I have sort of implemented it on my page, but I can tell that it hasn't worked as well as I would like it to, and I don't fully understand how to use it yet as we haven't really touched on that. The flexbox course was an introductory course but I think there are many elements within it that I still need to pay attention to.
+
 - **Styling Elements**: 
 I was able to personalize the style for the profile image, the buttons available, as well as the loader page at the bottom of the page.
 
 #### Challenges Faced
 -Numerical values. Anytime I had to target relative sizes I struggled to find the right proportions.
 -The images provided had different proportion sizes but all had the same class name. Targeting them individually wasn't possible if keeping the html code intact from what was provided, so finding an alternative way to proportion them was challenging.
+-Understanding exactly how differently Flexbox and Grid interact with their given content. It took a lot of time for me to find what was working and what was causing problems.
+Try and try as I might, for some reason I couldn't get the different elements within the .profile to be centered and also seperated. I need to focus more on this.
 
 - **Responsive Design for Smaller Screens**: I initially struggled with this because I had thought that we had to approached it from the perspective of "what size is the box do we want it to display on", not fully understanding how exactly the media query reacts. 
 - **Hover and Focus Effects**: It took some reasearch but I managed to get most of the elements of this to work properly.

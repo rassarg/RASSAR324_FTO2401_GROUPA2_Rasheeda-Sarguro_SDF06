@@ -17,12 +17,25 @@ body {
 img {
     display: block;
 }
+
 /* below is all custom*/ 
 
 .container {
-    max-width: 1000px;
+    max-width: 9000px;
     margin: 0 auto;
+    input {
+        display: none;
+    }
 }
+
+@media (min-width: 700px) {
+    .container input {
+        display: flex;
+    }
+}
+
+/* Profile */
+
 .profile-image {
     display: flex;
     flex-direction: column;
@@ -34,18 +47,9 @@ img {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    input {
-        display: none;
-    }
 }   
 
-@media (min-width: 700px) {
-    .profile input {
-        display: block;
-    }
-}
 .profile-image img {
-    float: left;
     width: 200px;
     border-radius: 50%;
     margin-top: 50px;
@@ -54,19 +58,21 @@ img {
     background:linear-gradient(45deg, #5851db, #833ab4, #e1306c, #fd1d1d, #ff3434); /* I tried and tried but couldnt quite figure out how to make the circle appear around
     the profile pic, as if a story had been posted, so I just made the background color the Instagram logo colors instead */
 }
+
 .profile-bio {
-    float: right;
     font-size: 15px;
     font-weight: 400;
     line-height: 1.1;
+    align-self: center;
+    margin-right: 100px;
 }
  h1 {
     padding: 10px;
-    align-self: flex-end;
 }
 
 .btn-profile-edit-btn {
     display: inline-block;
+    flex-wrap: wrap;
     font-size: 12px;
     max-width: 100px;
     border: 10px transparent;
@@ -76,6 +82,9 @@ img {
     margin-left: 20px;
     cursor: pointer;
 }
+
+/* Profile buttons */
+
 .btn-profile-settings-btn {
     font-size: 12px;
     max-width: 100px;
@@ -84,9 +93,11 @@ img {
     padding: 10px;
     cursor: pointer;
 }
+
 .btn-profile-settings-btn:hover, .btn-profile-edit-btn:hover {
     background-color: #c0b4b4;
 }
+
 .btn-profile-settings-btn, .btn-profile-edit-btn {
     transition-duration: 0.4s;
 }
@@ -95,11 +106,14 @@ img {
     box-shadow: 0 5px #666;
     transform: translateX(4px);
 }
+
+/* end of buttons */
+
 .profile-stats {
     display: inline-block;
+    line-height: 1.4;
     gap: 50px;
     padding: 20px;
-    margin-top: 50px;
     margin-right: 50px;
     }
 
@@ -162,6 +176,7 @@ img {
 .fa-clone, .fa-comment {
     transform: rotateY(180deg);
 }
+
 .visually-hidden {
     position: absolute;
     height: 1px;
