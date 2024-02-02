@@ -57,8 +57,8 @@ img {
 
 .profile {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 200px 100px;
     max-width: 930px;
     height: 100%;
     justify-content: center;
@@ -72,63 +72,60 @@ img {
         display: block;
     }
 }
-
 .profile-image img {
-    grid-column: 1 / 2;
-    grid-row: 1 / 1;
-    width: 150px;
+    float: left;
+    width: 200px;
     border-radius: 50%;
     margin-top: 50px;
-    margin-left: 40px;
+    margin-left: 50px;
     border: 5px solid transparent;
     background:linear-gradient(45deg, #5851db, #833ab4, #e1306c, #fd1d1d, #ff3434); /* I tried and tried but couldnt quite figure out how to make the circle appear around
     the profile pic, as if a story had been posted, so I just made the background color the Instagram logo colors instead */ 
 }
 
 .profile-user-settings {
-
-}
-.btn-profile-edit-btn {
-    grid-column: 2 / 3;
-    grid-row: 1 / 1;
-    font-size: 12px;
-    max-width: 100px;
-    border: 10px transparent;
-    border-radius: 10px;
-    margin: 3px;
-    padding: 10px;
-}
-
-.btn-profile-settings-btn {
-    grid-column: 2 / 3;
-    grid-row: 1 / 1;
-    font-size: 12px;
-    max-width: 50px;
-    border: 10px transparent;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.profile-stats li {
-    grid-column: 2 / 3;
-    display: inline-block;
-    font-size: 12px;
-}
-.profile-bio {
-    grid-column: 2 / 2;
-    grid-row: 3 / 3;
-    font-size: 15px;
-    font-weight: 400;
+    display: flex;
     
+}
+h1 {
+    align-self: flex-end;
+    padding: 10px;
 }
 .profile-real-name, .profile-stat-count {
     font-weight: 600;
 }
+.profile-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.profile-stats  > ul {
+    align-self: center;
+}
+.btn-profile-edit-btn {
+    font-size: 12px;
+    max-width: 100px;
+    border: 10px transparent;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+.btn-profile-settings-btn {
+    font-size: 12px;
+    max-width: 100px;
+    border: 10px transparent;
+    border-radius: 10px;
+}
+.profile-bio {
+    font-size: 15px;
+    font-weight: 400;
+}
+
 /* Gallery*/
 
 .gallery {
     display: grid;
-    flex-wrap: wrap;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     max-width: 700px;
@@ -140,52 +137,47 @@ img {
 
 .gallery img {
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     height: 100%;
     aspect-ratio: 4/4;
     background-color: #e1dfdf;  /* I added a background color because there are varying image sizes, and some have too much white space 
-    behind them becuase the object-fit 'cover' crops some the images, but I wanted everything to look intentional. 'contain' also does
-    this but throws off the sizing of the images so that there is less symmetry */
+    behind them because of this. The object-fit 'cover' crops some images, which is why I didn't use that. But I wanted everything to look intentional,
+    so I added the soft background color as a sort of optical illusion to make the eye believe theyre all the same size */
 }
 
 .gallery-item {
     position: relative;
+    margin: auto;
+    color: white; 
 }
 
-.gallery-item:hover .gallery-item-info {
+.gallery-item:hover .gallery-item-info, .gallery-item:focus .gallery-item-info {
     position: absolute;
     top: 0; 
     display: grid;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    
 }
 
-.gallery-img:hover, .gallery-img:focus {
-    visibility: visible;
-    opacity: 0.7;
-}
 .gallery-item-info {
     display: none;
-}
-.gallery-item-likes {
-    margin-top: 10px;
 }
 
 .gallery-item-type {
     position: absolute;
     margin-bottom: 10px;
-    font-size: 2.5rem;
-    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+    font-size: 5px;
+    text-shadow: 0.2rem 0.2rem 0.2rem #0000001a;
 }
 
+.fa-clone, .fa-comment {
+    transform: rotateY(180deg);
+}
 .visually-hidden {
-    position: absolute !important;
+    position: absolute;
     height: 1px;
     width: 1px;
     overflow: hidden;
@@ -195,7 +187,7 @@ img {
 @media (min-width: 700px) {
     .gallery input {
         display: block;
-    }
+}
 
 /* loader */
 
@@ -209,6 +201,7 @@ img {
     margin-left: 45%;
     animation: loader 500ms linear infinite;
 }
+
 @keyframes loader {
     to {
         transform: rotate(360deg);
