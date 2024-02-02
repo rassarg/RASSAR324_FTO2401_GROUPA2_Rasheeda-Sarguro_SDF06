@@ -22,7 +22,7 @@ img {
 /* below is all custom*/ 
 
 /* Profile */
-//*
+/*
 .profile {
     max-width: 500px;
     display: flex;
@@ -56,118 +56,112 @@ img {
 } */
 
 .profile {
-    padding: 100px;
-    
+    display: grid;
+    grid-template-rows: 1fr;
+    max-width: 930px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    input {
+        display: none;
+    }
 }
-
-.profile-image {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 10%;
-
+@media (min-width: 700px) {
+    .profile input {
+        display: block;
+    }
 }
 
 .profile-image img {
+    width: 150px;
     border-radius: 50%;
+    margin-top: 25px;
+    margin-left: 25px;
     border: 5px solid transparent;
     background:linear-gradient(45deg, #5851db, #833ab4, #e1306c, #fd1d1d, #ff3434); /* I tried and tried but couldnt quite figure out how to make the circle appear around
     the profile pic, as if a story had been posted, so I just made the background color the Instagram logo colors instead */ 
 }
-/* FIX LAYOUT OF MARGIN HEADER*/
-.profile-user-name {
-    display: inline-block;
-    font-size: 30px;
-    font-weight: 300;
-}
 
 .btn-profile-edit-btn {
+    align-self: right;
     font-size: 12px;
+    max-width: 100px;
     border: 10px transparent;
-    border-radius: 0.3rem;
+    border-radius: 10px;
+    margin: 3px;
     padding: 10px;
-    margin-left: 5%;
+    
 }
 .btn-profile-settings-btn {
     font-size: 12px;
+    max-width: 50px;
     border: 10px transparent;
-    border-radius: 0.3rem;
+    border-radius: 10px;
     padding: 10px;
 }
-.profile-stats {
-    margin-top: 2.3rem;
-    margin-bottom: 40px;
-}
+
 .profile-stats li {
     display: inline-block;
     font-size: 12px;
-    justify-content: center;
-    margin-right: 50px;
 }
 .profile-bio {
     font-size: 15px;
     font-weight: 400;
+    
 }
 .profile-real-name, .profile-stat-count {
     font-weight: 600;
 }
 /* Gallery*/
 
-.container .gallery {
+.gallery {
     display: grid;
     flex-wrap: wrap;
-    grid-template-columns: repeat(3, minmax(80px, 250px));
-    gap: 20px;
-    align-items: center;
-    margin-inline: auto;
-    justify-content: center;
-}   
-.gallery-item img {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 700px;
+    margin: 4rem auto;
+}
+
+.gallery img {
     width: 100%;
+    object-fit: cover;
     height: 100%;
-    object-fit: relative;
+    aspect-ratio: 4/4;
+    background-color: #e1dfdf;  /* I added a background color because there are varying image sizes, and some have too much white space 
+    behind them becuase the object-fit 'cover' crops some the images, but I wanted everything to look intentional. 'contain' also does
+    this but throws off the sizing of the images so that there is less symmetry */
 }
 
 .gallery-item {
-    
-    flex: 1 0 15%;
-    color: #fff;
-    margin: 5px;
+    position: relative;
 }
 
-.gallery-item:hover .gallery-item-info,
-.gallery-item:focus .gallery-item-info {
-    display: flex;
+.gallery-item:hover .gallery-item-info {
+    position: absolute;
+    display: grid;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+.gallery-img:hover, .gallery-img:focus {
+    visibility: visible;
+    opacity: 0.7;
+}
 .gallery-item-info {
     display: none;
 }
-
-.gallery-item-info li {
-    display: inline-block;
-    font-size: 1.7rem;
-    font-weight: 600;
-}
-
 .gallery-item-likes {
     margin-right: 2.2rem;
 }
 
 .gallery-item-type {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    margin-bottom: 10px;
     font-size: 2.5rem;
     text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
 }
@@ -179,9 +173,7 @@ img {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
 }
-.fa-fa-heart, .fa-fa-comment {
-    transform: rotateY(180deg);
-}
+
 /* loader */
 
 .loader {
