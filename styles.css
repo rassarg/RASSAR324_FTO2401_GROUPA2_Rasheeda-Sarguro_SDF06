@@ -2,7 +2,6 @@
 
 :root {
     font-size: 12px;
-    height: 90%; /* unsure if this has any effect*/
 }
 body {
     font-family: "Open Sans", Arial, sans-serif;
@@ -17,43 +16,8 @@ body {
 }
 img {
     display: block;
-    
 }
 /* below is all custom*/ 
-
-/* Profile */
-/*
-.profile {
-    max-width: 500px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.profile-image {
-    float: left;
-}
-.profile-user-settings {
-    align-self: center;
-    margin-left: 80%;
-    font-family: sans-serif;
-    
-}
-.profile-bio {
-    align-self: center;
-    padding: 20px;
-    font-size: larger;
-}
-
-
-/*ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 50px;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px; 
-} */
 
 .profile {
     display: grid;
@@ -85,7 +49,6 @@ img {
 
 .profile-user-settings {
     display: flex;
-    
 }
 h1 {
     align-self: flex-end;
