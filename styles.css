@@ -188,8 +188,8 @@ img {
 @media (min-width: 700px) {
     .gallery input {
         display: block;
+    }
 }
-
 /* loader */
 
 .loader {
